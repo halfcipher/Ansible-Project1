@@ -1,0 +1,11 @@
+---
+- hosts: primary
+  become_user: root
+  tasks:
+    - name: Add sudoers users to root group
+      user:
+        name: dba_rw
+        password: 'p@ssw0rd' 
+        groups: root
+        state: present
+        shell: /bin/bash
